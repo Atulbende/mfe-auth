@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // Ensure path alias is correctly set
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   server: { port: 3001 },
