@@ -4,23 +4,29 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
+import {toast} from "shell/toast";
 
-
-
-const App = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleLogin = (e) => {
+    console.log("Login clicked");
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Undo"),
+      },
+    })
     e.preventDefault();
-
     // Static credentials check
-    if (email === "user@example.com" && password === "password123") {
-      // Redirect to home-mfe
-      window.location.href = "http://localhost:3002"; // Update with your actual home-mfe URL
-    } else {
-      alert("Invalid credentials");
-    }
+   
+    // if (email === "user@example.com" && password === "password123") {
+    //   // Redirect to home-mfe
+    //   window.location.href = "http://localhost:3002"; // Update with your actual home-mfe URL
+    // } else {
+    //   alert("Invalid credentials");
+    // }
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
@@ -76,4 +82,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Login

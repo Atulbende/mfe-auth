@@ -13,15 +13,23 @@ export default defineConfig({
       name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/App.jsx',
+        './Login': './src/Login.jsx',
+      },
+      remotes: {
+        shell: 'http://localhost:3000/assets/remoteEntry.js', // Replace with your host's address
       },
       shared: ['react', 'react-dom'],
     }),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   server: { port: 3001 },
+  build: {
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false,
+  },
 });
